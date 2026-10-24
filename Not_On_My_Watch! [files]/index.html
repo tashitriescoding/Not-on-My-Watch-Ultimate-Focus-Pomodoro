@@ -1,0 +1,99 @@
+Claude
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index · HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Not on my watch</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=DM+Sans:wght@400;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+<h1>Not on my watch</h1>
+<p class="sub">The clock only runs while you’re at your desk. Step away and it stops, flashes and sounds off.</p>
+ 
+<div class="grid">
+  <div class="panel cam" id="camBox">
+    <video id="vid" autoplay playsinline muted></video>
+    <span class="badge" id="badge">Camera off</span>
+    <span class="camhint" id="camhint">Press Start studying and allow camera access. Video stays on your device.</span>
+  </div>
+ 
+  <div class="panel">
+    <div class="state" id="state">Ready when you are</div>
+    <div class="clock" id="clock">00:00:00</div>
+    <div class="bar"><i id="cyc"></i></div>
+    <div class="note" id="cycTxt">Focus round: 0 of 25 min</div>
+    <div class="stats">
+      <div><b id="away">00:00</b><span>Time away</span></div>
+      <div><b id="cnt">0</b><span>Distractions</span></div>
+      <div><b id="rounds">0</b><span>Rounds done</span></div>
+    </div>
+    <div class="row">
+      <button class="main" id="startBtn">Start studying</button>
+      <button id="pauseBtn" disabled>Pause</button>
+      <button id="pipBtn">Float timer</button>
+      <button id="brkBtn" disabled>Take a break</button>
+      <button class="danger" id="endBtn" disabled>End session</button>
+    </div>
+  </div>
+</div>
+ 
+<div class="grid" style="margin-top:16px">
+  <div class="panel">
+    <h2>Settings</h2>
+    <p class="note">Alerts fire after you’ve been out of view for the grace period. A long absence is treated as a break.</p>
+    <div class="row" style="margin-top:0">
+      <label>Grace period<br><select id="grace"><option value="3">3 sec</option><option value="5" selected>5 sec</option><option value="10">10 sec</option></select></label>
+      <label>Long break after<br><select id="longb"><option value="60">1 min</option><option value="120" selected>2 min</option><option value="300">5 min</option></select></label>
+      <label>Focus round<br><select id="focus"><option value="25" selected>25 min</option><option value="45">45 min</option><option value="50">50 min</option></select></label>
+    </div>
+  </div>
+ 
+  <div class="panel">
+    <h2>Banned items</h2>
+    <p class="note">Teach it a distraction, like your phone. Hold it inside the dashed box and capture. It matches by colour, so pick something that stands out from your desk and room.</p>
+    <div class="row" style="margin-top:0">
+      <input type="text" id="itemName" placeholder="Item name, e.g. Phone" aria-label="Item name">
+      <button id="regBtn">Open camera box</button>
+    </div>
+    <div class="regcam" id="regcam" hidden><span class="box"></span></div>
+    <div class="row" id="capRow" hidden><button class="main" id="capBtn">Capture item</button></div>
+    <ul class="items" id="items"></ul>
+  </div>
+</div>
+</main>
+ 
+<div id="alarm" role="alertdialog" aria-live="assertive">
+  <h2 id="aTitle">NOT ON MY WATCH!</h2>
+  <p id="aMsg">You left your desk. The clock is stopped. Get back in view.</p>
+  <button id="aBtn">I’m back</button>
+</div>
+ 
+<canvas id="cv" width="96" height="72"></canvas>
+ 
+<script src="app.js"></script>
+</body>
+</html>
+ 
+Claude finished the response

@@ -1,0 +1,7 @@
+{
+  "name": "not-on-my-watch",
+  "version": "1.0.0",
+  "description": "Camera-based study timer that stops and alarms when you leave your desk.",
+  "scripts": { "start": "npx serve ." },
+  "license": "MIT"
+}
